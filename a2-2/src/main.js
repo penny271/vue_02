@@ -8,6 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import store from "./store";
 
 // アイコンを読み込み
 library.add(fas, far)
@@ -20,5 +21,6 @@ new Vue({
    // router:router,
    router,
    moment,
+   store,
    render: h => h(App),
 }).$mount('#app')

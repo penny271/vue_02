@@ -91,14 +91,39 @@
 
 <script>
 export default {
-	data() {
-		return {
-			insuranceAnswer: null,
-			hospitalAnswer: null,
-			pastAnswer: null,
-		};
-	},
-	computed: {},
+	// data() {
+	// 	return {
+	// 		insuranceAnswer: null,
+	// 		hospitalAnswer: null,
+	// 		pastAnswer: null,
+	// 	};
+	// },
+	computed: {
+      insuranceAnswer:{
+         get() {
+            return this.$store.getters.insuranceAnswer;
+         },
+         set(value) {
+            this.$store.commit('insuranceAnswer', value);
+         }
+      },
+      hospitalAnswer:{
+         get() {
+            return this.$store.getters.hospitalAnswer;
+         },
+         set(value) {
+            this.$store.commit('hospitalAnswer', value);
+         }
+      },
+      pastAnswer:{
+         get() {
+            return this.$store.getters.pastAnswer;
+         },
+         set(value) {
+            this.$store.commit('pastAnswer', value);
+         }
+      },
+   },
 };
 </script>
 

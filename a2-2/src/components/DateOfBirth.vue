@@ -44,18 +44,44 @@ export default {
 		return {
 			japaneseEras: [],
 			months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-			year: 1990,
-			month: 1,
-			date: 1,
+			// year: 1990,
+			// month: 1,
+			// date: 1,
 		};
 	},
 	mounted() {
       this.japaneseEras = this.genereate();
-	},
+   },
+   computed: {
+      year:{
+         get() {
+            return this.$store.state.year;
+         },
+         set(value) {
+            this.$store.commit('year', value);
+         }
+      },
+      month:{
+         get() {
+            return this.$store.state.month;
+         },
+         set(value) {
+            this.$store.commit('month', value);
+         }
+      },
+      date:{
+         get() {
+            return this.$store.state.date;
+         },
+         set(value) {
+            this.$store.commit('date', value);
+         }
+      },
+   },
 	methods: {
 		//生年月日欄の西暦と年号を表すメソッド
 		genereate() {
-			const japaneseEras = [];
+         const japaneseEras = [];
 			for (let y = 1912; y <= 2020; y++) {
 				if (y <= 1925) {
 					japaneseEras.push({ year: y, label: `${y} (大正${y - 1911}年)` });
