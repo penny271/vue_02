@@ -56,7 +56,7 @@ export default {
 	},
 	computed: {
       questionGender() {
-         return this.$store.state.questionGender;
+         return this.$store.state.age.questionGender;
       },
 		gender: {
 			get() {
@@ -67,7 +67,7 @@ export default {
 			},
       },
       questionDateOfBirth() {
-         return this.$store.state.questionDateOfBirth;
+         return this.$store.state.age.questionDateOfBirth;
       }
 		// questionGender: () => this.$store.state.questionGender
 	},
@@ -75,12 +75,8 @@ export default {
 </script>
 
 <style scoped>
-* {
-	/* margin: 0; */
-}
 .main {
 	margin: auto;
-	/* text-align: center; */
 }
 .ask {
 	text-align: center;

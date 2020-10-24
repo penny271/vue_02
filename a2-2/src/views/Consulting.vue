@@ -32,20 +32,20 @@
 
 <script>
 export default {
-	// data() {
-	// 	return {
-	// 		detail: "",
-	// 	};
-	// },
 	computed: {
 		questionDetail() {
-			return this.$store.state.questionDetail;
+			//! return this.$store.state.questionDetail;
+			return this.$store.state.consulting.questionDetail;
 		},
 		detail: {
 			get() {
-				return this.$store.state.detail;
+            //¥どちらでも大丈夫なぜ？？
+				// return this.$store.state.detail;
+				return this.$store.state.consulting.detail;
 			},
 			set(value) {
+            //¥改変不可--なぜconsulting.jsまでアクセスしなくてよいのかわからない
+				//! this.$store.commit("detail", value);
 				this.$store.commit("detail", value);
 			},
 		},

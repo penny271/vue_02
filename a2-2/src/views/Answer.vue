@@ -54,7 +54,7 @@ export default {
    // },
 	computed: {
 		questionGender() {
-			return this.$store.state.questionGender;
+			return this.$store.state.age.questionGender;
 		},
 		gender() {
 			return this.$store.getters.gender;
@@ -69,31 +69,35 @@ export default {
          return this.$store.getters.date;
       },
 		questionDateOfBirth() {
-			return this.$store.state.questionDateOfBirth;
+			return this.$store.state.age.questionDateOfBirth;
 		},
 		questionInsurance() {
-			return this.$store.state.questionInsurance;
+			// return this.$store.state.questionInsurance;
+			return this.$store.state.insurance.questionInsurance;
 		},
 		insuranceAnswer() {
-			return this.$store.state.insuranceAnswer;
+         // return this.$store.state.insuranceAnswer;
+         return this.$store.state.insurance.insuranceAnswer;
 		},
 		questionHospital() {
-			return this.$store.state.questionHospital;
+			// return this.$store.state.questionHospital;
+			return this.$store.state.insurance.questionHospital;
 		},
 		hospitalAnswer() {
-			return this.$store.state.hospitalAnswer;
+			// return this.$store.state.hospitalAnswer;
+			return this.$store.state.insurance.hospitalAnswer;
 		},
 		questionPast() {
-			return this.$store.state.questionPast;
+			return this.$store.state.insurance.questionPast;
 		},
 		pastAnswer() {
-			return this.$store.state.pastAnswer;
+			return this.$store.state.insurance.pastAnswer;
 		},
 		questionDetail() {
-			return this.$store.state.questionDetail;
+			return this.$store.state.consulting.questionDetail;
 		},
 		detail() {
-			return this.$store.state.detail;
+			return this.$store.state.consulting.detail;
 		},
 	},
 };
