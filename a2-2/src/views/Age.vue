@@ -60,6 +60,8 @@ export default {
       },
 		gender: {
 			get() {
+            //¥▼下記の書き方不可_なぜ?
+				//! return this.$store.getters.age.gender;
 				return this.$store.getters.gender;
 			},
 			set(value) {
@@ -69,7 +71,6 @@ export default {
       questionDateOfBirth() {
          return this.$store.state.age.questionDateOfBirth;
       }
-		// questionGender: () => this.$store.state.questionGender
 	},
 };
 </script>
