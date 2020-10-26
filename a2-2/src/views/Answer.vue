@@ -57,47 +57,46 @@ export default {
 			return this.$store.state.age.questionGender;
 		},
 		gender() {
-			return this.$store.getters.gender;
+         //! return this.$store.getters.gender;
+         //¥▼ここも変える必要有り！！！！
+			return this.$store.getters["age/gender"];
 		},
 		year() {
-         return this.$store.getters.year;
+         // return this.$store.getters.year;
+         return this.$store.getters["age/year"];
       },
 		month() {
-         return this.$store.getters.month;
+         return this.$store.getters["age/month"];
       },
 		date() {
-         return this.$store.getters.date;
+         return this.$store.getters["age/date"];
       },
 		questionDateOfBirth() {
 			return this.$store.state.age.questionDateOfBirth;
 		},
 		questionInsurance() {
-			// return this.$store.state.questionInsurance;
 			return this.$store.state.insurance.questionInsurance;
 		},
 		insuranceAnswer() {
-         // return this.$store.state.insuranceAnswer;
-         return this.$store.state.insurance.insuranceAnswer;
+         return this.$store.getters["insurance/insuranceAnswer"];
 		},
 		questionHospital() {
-			// return this.$store.state.questionHospital;
 			return this.$store.state.insurance.questionHospital;
 		},
 		hospitalAnswer() {
-			// return this.$store.state.hospitalAnswer;
-			return this.$store.state.insurance.hospitalAnswer;
+			return this.$store.getters["insurance/hospitalAnswer"];
 		},
 		questionPast() {
 			return this.$store.state.insurance.questionPast;
 		},
 		pastAnswer() {
-			return this.$store.state.insurance.pastAnswer;
+			return this.$store.getters["insurance/pastAnswer"];
 		},
 		questionDetail() {
 			return this.$store.state.consulting.questionDetail;
 		},
 		detail() {
-			return this.$store.state.consulting.detail;
+			return this.$store.getters["consulting/detail"];
 		},
 	},
 };

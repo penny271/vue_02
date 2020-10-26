@@ -60,12 +60,10 @@ export default {
       },
 		gender: {
 			get() {
-            //¥▼下記の書き方不可_なぜ?
-				//! return this.$store.getters.age.gender;
-				return this.$store.getters.gender;
+				return this.$store.getters["age/gender"];
 			},
 			set(value) {
-				this.$store.commit("gender", value);
+            this.$store.commit("age/gender",value)
 			},
       },
       questionDateOfBirth() {

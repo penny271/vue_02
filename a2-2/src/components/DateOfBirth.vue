@@ -55,29 +55,26 @@ export default {
    computed: {
       year:{
          get() {
-            //! return this.$store.state.year;
             return this.$store.state.age.year;
          },
          set(value) {
-            this.$store.commit('year', value);
+            this.$store.commit('age/year', value);
          }
       },
       month:{
          get() {
-            //! return this.$store.state.month;
             return this.$store.state.age.month;
          },
          set(value) {
-            this.$store.commit('month', value);
+            this.$store.commit('age/month', value);
          }
       },
       date:{
          get() {
-            //! return this.$store.state.date;
             return this.$store.state.age.date;
          },
          set(value) {
-            this.$store.commit('date', value);
+            this.$store.commit('age/date', value);
          }
       },
    },

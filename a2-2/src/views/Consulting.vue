@@ -34,19 +34,14 @@
 export default {
 	computed: {
 		questionDetail() {
-			//! return this.$store.state.questionDetail;
 			return this.$store.state.consulting.questionDetail;
 		},
 		detail: {
 			get() {
-            //¥どちらでも大丈夫なぜ？？
-				// return this.$store.state.detail;
-				return this.$store.state.consulting.detail;
+				return this.$store.getters["consulting/detail"];
 			},
 			set(value) {
-            //¥改変不可--なぜconsulting.jsまでアクセスしなくてよいのかわからない
-				//! this.$store.commit("detail", value);
-				this.$store.commit("detail", value);
+				this.$store.commit("consulting/detail", value);
 			},
 		},
 	},

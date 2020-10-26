@@ -94,26 +94,27 @@ export default {
 	computed: {
       insuranceAnswer:{
          get() {
-            return this.$store.getters.insuranceAnswer;
+            // return this.$store.getters.insuranceAnswer;
+            return this.$store.getters["insurance/insuranceAnswer"];
          },
          set(value) {
-            this.$store.commit('insuranceAnswer', value);
+            this.$store.commit('insurance/insuranceAnswer', value);
          }
       },
       hospitalAnswer:{
          get() {
-            return this.$store.getters.hospitalAnswer;
+            return this.$store.getters["insurance/hospitalAnswer"];
          },
          set(value) {
-            this.$store.commit('hospitalAnswer', value);
+            this.$store.commit('insurance/hospitalAnswer', value);
          }
       },
       pastAnswer:{
          get() {
-            return this.$store.getters.pastAnswer;
+            return this.$store.getters["insurance/pastAnswer"];
          },
          set(value) {
-            this.$store.commit('pastAnswer', value);
+            this.$store.commit('insurance/pastAnswer', value);
          }
       },
    },
