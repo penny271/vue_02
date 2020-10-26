@@ -27,7 +27,7 @@
 					</label>
 
 					<transition name="fadeIn">
-						<div v-if="insuranceAnswer">
+						<div v-if="insuranceAnswer !=='未回答'">
 							<p>
 								現在入院中ですか。または、最近3ヶ月以内に医師の診断・検査の結果、入院・手術を勧められたことはありますか？
 							</p>
@@ -52,7 +52,7 @@
 					</transition>
 
 					<transition name="fadeIn">
-						<div v-if="hospitalAnswer">
+						<div v-if="hospitalAnswer !=='未回答'">
 							<p>
 								過去５年以内に、病気や怪我で、手術を受けたことまたは継続して７日以上の入院をしたことはありますか？
 							</p>
@@ -91,14 +91,33 @@
 
 <script>
 export default {
-	data() {
-		return {
-			insuranceAnswer: null,
-			hospitalAnswer: null,
-			pastAnswer: null,
-		};
-	},
-	computed: {},
+	computed: {
+      insuranceAnswer:{
+         get() {
+            // return this.$store.getters.insuranceAnswer;
+            return this.$store.getters["insurance/insuranceAnswer"];
+         },
+         set(value) {
+            this.$store.commit('insurance/insuranceAnswer', value);
+         }
+      },
+      hospitalAnswer:{
+         get() {
+            return this.$store.getters["insurance/hospitalAnswer"];
+         },
+         set(value) {
+            this.$store.commit('insurance/hospitalAnswer', value);
+         }
+      },
+      pastAnswer:{
+         get() {
+            return this.$store.getters["insurance/pastAnswer"];
+         },
+         set(value) {
+            this.$store.commit('insurance/pastAnswer', value);
+         }
+      },
+   },
 };
 </script>
 

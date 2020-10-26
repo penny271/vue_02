@@ -3,11 +3,16 @@
 		<div class="container">
 			<form>
 				<div class="stepContainer">
-					<p class="step">STEP2</p>
-					<p class="ask"><font-awesome-icon class="fontAwesome" :icon="['fas', 'file-alt']" />ご相談内容をご記入ください</p>
+					<p class="step">STEP3</p>
+					<p class="ask">
+						<font-awesome-icon
+							class="fontAwesome"
+							:icon="['fas', 'file-alt']"
+						/>ご相談内容をご記入ください
+					</p>
 				</div>
 				<div class="questionContent">
-					<p>-ご相談内容-</p>
+					<p>{{ questionDetail }}</p>
 					<label for="detail">
 						<textarea name="" id="detail" v-model="detail"></textarea>
 					</label>
@@ -17,7 +22,7 @@
 				<router-link to="/insurance" tag="button" class="btn"
 					>前へ戻る&nbsp;&nbsp;➤</router-link
 				>
-				<router-link to="/consulting" tag="button" class="btn"
+				<router-link to="/answer" tag="button" class="btn"
 					>次へ進む&nbsp;&nbsp;➤</router-link
 				>
 			</div>
@@ -27,12 +32,19 @@
 
 <script>
 export default {
-	data() {
-		return {
-			detail: "",
-		};
+	computed: {
+		questionDetail() {
+			return this.$store.state.consulting.questionDetail;
+		},
+		detail: {
+			get() {
+				return this.$store.getters["consulting/detail"];
+			},
+			set(value) {
+				this.$store.commit("consulting/detail", value);
+			},
+		},
 	},
-	computed: {},
 };
 </script>
 
